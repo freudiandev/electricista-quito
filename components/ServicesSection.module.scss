@@ -1,0 +1,140 @@
+.servicesSection {
+  padding: 5rem 1rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+
+  @media (max-width: 280px) {
+    padding: 2rem 0.5rem;
+  }
+
+  @media (min-width: 281px) and (max-width: 768px) {
+    padding: 3rem 1rem;
+  }
+}
+
+.title {
+  text-align: center;
+  color: #1a4d8f;
+  margin-bottom: 1rem;
+
+  @media (max-width: 280px) {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.subtitle {
+  text-align: center;
+  color: #64748b;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin-bottom: 4rem;
+
+  @media (max-width: 280px) {
+    margin-bottom: 2rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: 280px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (min-width: 281px) and (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1441px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+
+  @media (max-width: 280px) {
+    padding: 1.25rem;
+    border-radius: 8px;
+  }
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(26, 77, 143, 0.15);
+
+    .icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+  }
+}
+
+.icon {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+  display: block;
+  transition: transform 0.3s ease;
+
+  @media (max-width: 280px) {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.cardTitle {
+  color: #1a4d8f;
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  margin-bottom: 0.75rem;
+
+  @media (max-width: 280px) {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.cardDescription {
+  color: #64748b;
+  line-height: 1.6;
+  font-size: clamp(0.9375rem, 2vw, 1rem);
+
+  @media (max-width: 280px) {
+    font-size: 0.875rem;
+  }
+}
+
+// Staggered animation for cards
+@for $i from 1 through 9 {
+  .card:nth-child(#{$i}).visible {
+    animation: fadeInUp 0.6s ease-out #{$i * 0.1}s forwards;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

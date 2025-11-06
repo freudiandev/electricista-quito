@@ -1,0 +1,6 @@
+# Robots.txt for Leo Electricista
+
+User-agent: *
+Allow: /
+
+Sitemap: https://leoelectricista.com/sitemap.xml
