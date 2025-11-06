@@ -1,0 +1,242 @@
+// Variables
+$primary-color: #1a4d8f;
+$secondary-color: #2196f3;
+$accent-color: #ffd700;
+$dark-bg: #0a1628;
+$light-bg: #f5f7fa;
+$text-dark: #1a1a1a;
+$text-light: #ffffff;
+$text-gray: #64748b;
+$shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+// Reset
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: $text-dark;
+  background: $light-bg;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+p {
+  line-height: 1.6;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+// Utility classes
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: 768px) {
+    padding: 0 2rem;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+// Buttons
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &.btn-primary {
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    color: $text-light;
+    
+    &:hover {
+      background: linear-gradient(135deg, darken($primary-color, 5%), darken($secondary-color, 5%));
+    }
+  }
+
+  &.btn-whatsapp {
+    background: #25d366;
+    color: $text-light;
+    
+    &:hover {
+      background: darken(#25d366, 5%);
+    }
+  }
+
+  &.btn-call {
+    background: $accent-color;
+    color: $text-dark;
+    
+    &:hover {
+      background: darken($accent-color, 5%);
+    }
+  }
+
+  &.btn-outline {
+    background: transparent;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    
+    &:hover {
+      background: $primary-color;
+      color: $text-light;
+    }
+  }
+}
+
+// Responsive breakpoints
+@media (max-width: 280px) {
+  // Smart watches
+  body {
+    font-size: 12px;
+  }
+  
+  .container {
+    padding: 0 0.5rem;
+  }
+}
+
+@media (min-width: 281px) and (max-width: 480px) {
+  // Mobile phones
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  // Tablets
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  // Small laptops
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  // Desktops
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+@media (min-width: 1441px) {
+  // Large screens & TVs
+  .container {
+    max-width: 1600px;
+    padding: 0 4rem;
+  }
+  
+  body {
+    font-size: 18px;
+  }
+}

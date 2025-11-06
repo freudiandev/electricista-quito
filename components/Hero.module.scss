@@ -1,0 +1,208 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0a1628 0%, #1a4d8f 50%, #2196f3 100%);
+  overflow: hidden;
+  padding: 2rem 1rem;
+
+  @media (max-width: 280px) {
+    min-height: 100svh;
+    padding: 1rem 0.5rem;
+  }
+}
+
+.canvasContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 22, 40, 0.85) 0%,
+    rgba(26, 77, 143, 0.75) 50%,
+    rgba(33, 150, 243, 0.65) 100%
+  );
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  max-width: 900px;
+  padding: 2rem;
+  animation: fadeIn 1s ease-out;
+
+  @media (max-width: 280px) {
+    padding: 1rem 0.5rem;
+  }
+
+  @media (min-width: 281px) and (max-width: 480px) {
+    padding: 1.5rem 1rem;
+  }
+}
+
+.title {
+  font-size: clamp(1.75rem, 6vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+  
+  @media (max-width: 280px) {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  
+  @media (max-width: 280px) {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.name {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  color: #ffd700;
+  
+  @media (max-width: 280px) {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+
+  @media (max-width: 280px) {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 281px) and (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.btnHero {
+  min-width: 180px;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 280px) {
+    min-width: 140px;
+    padding: 0.625rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  @media (min-width: 281px) and (max-width: 480px) {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  svg {
+    width: clamp(18px, 3vw, 24px);
+    height: clamp(18px, 3vw, 24px);
+  }
+}
+
+.info {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  opacity: 0.9;
+
+  @media (max-width: 280px) {
+    font-size: 0.75rem;
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive para smart watches
+@media (max-width: 280px) {
+  .hero {
+    padding: 0.5rem;
+  }
+}
+
+// Responsive para tablets y superiores
+@media (min-width: 768px) {
+  .content {
+    padding: 3rem;
+  }
+}
+
+// Responsive para TVs grandes
+@media (min-width: 1441px) {
+  .content {
+    max-width: 1200px;
+    padding: 4rem;
+  }
+
+  .title {
+    margin-bottom: 2rem;
+  }
+
+  .name {
+    margin-bottom: 3rem;
+  }
+
+  .cta {
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+}
