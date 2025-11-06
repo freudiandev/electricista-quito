@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import styles from './Hero.module.scss'
 
 export default function Hero() {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const canvasRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (typeof window === 'undefined') return

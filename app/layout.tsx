@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: 'Leodan Cueva Electricista',
     images: [
       {
-        url: '/opengraph.jpg',
+        url: '/api/og',
         width: 1200,
         height: 630,
         alt: 'Leodan Cueva - Electricista Profesional en Quito',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Electricista Profesional en Quito | Leodan Cueva',
     description: 'Servicios eléctricos profesionales en Quito. Disponible 24/7. Instalación de cámaras de seguridad.',
-    images: ['/opengraph.jpg'],
+    images: ['/api/og'],
   },
   robots: {
     index: true,
